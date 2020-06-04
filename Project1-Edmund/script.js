@@ -50,7 +50,26 @@ function themeChange( id , isSetting){
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
 
+    document.querySelector('.btn-secondary.active').setAttribute('style', `background-color: ${color[id][0]} !important; border-color: ${color[id][0]} !important;`)
+    document.querySelector('.btn-secondary').setAttribute('style', `background-color: ${color[id][1]} !important; border-color: ${color[id][1]} !important;`)
+
+
     document.querySelectorAll('.form-check-input').forEach(value => {
         value.checked = (value.id == selectColor);
     })
 }
+
+
+
+
+// .btn-secondary {
+//     color: #fff;
+//     background-color: #6c757d;
+//     border-color: #6c757d;
+// }
+
+// .btn-secondary:not(:disabled):not(.disabled).active{
+//     color: #fff;
+//     background-color: #545b62;
+//     border-color: #4e555b;
+// }

@@ -62,36 +62,55 @@
                                 <label>Theme:</label>
                             </div>
                             <div class='col'>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="default" id="default" value="option1">
-                                        <label class="form-check-label" for="default">Default</label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ponder" id="ponder" value="option2">
-                                        <label class="form-check-label" for="ponder">Ponder</label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sunset" id="sunset" value="option3">
-                                        <label class="form-check-label" for="sunset">Shimmering Sunset</label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="calm" id="calm" value="option4">
-                                        <label class="form-check-label" for="calm">Calm It Down</label>
-                                      </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="default" id="default" value="option1">
+                                    <label class="form-check-label" for="default">Default</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ponder" id="ponder" value="option2">
+                                    <label class="form-check-label" for="ponder">Ponder</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sunset" id="sunset" value="option3">
+                                    <label class="form-check-label" for="sunset">Shimmering Sunset</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="calm" id="calm" value="option4">
+                                    <label class="form-check-label" for="calm">Calm It Down</label>
                                 </div>
                             </div>
                         </div>
-                        
-                        
-                        
-                        
+                    </div>
+
+                    <div id='weather'>
+                        <div class='row'>
+                            <div class='col-12 col-sm-2 col-lg-1'>
+                                <label>Weather:</label>
+                            </div>
+                            <div class='col'>
+                                <div class="btn-group btn-group-toggle" onclick="changeUnit()" data-toggle="buttons">
+                                    <label class="btn btn-secondary active" id='metric'>
+                                        <input type="radio" name="options" id="metric" checked> &degC
+                                    </label>
+                                    <label class="btn btn-secondary" id='imperial'>
+                                        <input type="radio" name="options" id="imperial"> &degF
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
+
+
+
             </div>
         </div>
     </div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Project1-Edmund/script.js"></script>
+    <script src='./Project1-Christine/Develop/script.js'></script>
 </body>
 </html>
