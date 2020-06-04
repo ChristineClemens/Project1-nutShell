@@ -20,11 +20,28 @@
     <div class='container-fluid'>
         
         <div class='row'>
-            <div class='col-3 col-lg-2 sidebar'>
+            <div class='col-12 col-sm-2 sidebar'>
                 <div id="sidebar" class="list-group ">
-                    <a class="list-group-item list-group-item-action whitefont" href="#home-row" id='home'><i class="fas fa-home"></i> Home</a>
-                    <a class="list-group-item list-group-item-action whitefont" href="#calendar-row" id='calendar'><i class="fas fa-calendar-alt"></i> Calendar</a>
-                    <a class="list-group-item list-group-item-action whitefont" href="#setting-row" id='setting'><i class="fas fa-cog"></i> Setting</a>
+                    <div class='row'>
+                        <div class='col col-xl-12 sidebar-col' id='home'>
+                            <a class="list-group-item list-group-item-action whitefont" href="#home-row" id='home'>
+                                <span class='side-icon' id='home'><i class="fas fa-home" id='home'></i></span>
+                                <span class='side-name' id='home'>Home</span>
+                            </a>
+                        </div>
+                        <div class='col col-xl-12 sidebar-col' id='calendar'>
+                            <a class="list-group-item list-group-item-action whitefont" href="#calendar-row" id='calendar'>
+                                <span class='side-icon' id='calendar'><i class="fas fa-calendar-alt" id='calendar'></i></span>
+                                <span class='side-name' id='calendar'>Calendar</span>
+                            </a>
+                        </div>
+                        <div class='col col-xl-12 sidebar-col' id='setting'>
+                            <a class="list-group-item list-group-item-action whitefont" href="#setting-row" id='setting'>
+                                <span class='side-icon' id='setting'><i class="fas fa-cog" id='setting'></i></span>
+                                <span class='side-name' id='setting'>Setting</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class='col'>
