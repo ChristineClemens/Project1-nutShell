@@ -1,9 +1,0 @@
-[submodule "Day-Planner-Application"]
-	path = Day-Planner-Application
-	url = https://github.com/Chet1317/Day-Planner-Application.git
-[submodule "DashboardApplication"]
-	path = DashboardApplication
-	url = https://github.com/ChristineClemens/DashboardApplication.git
-[submodule "Group-Project-1---Login-Page-Password-Generator"]
-	path = Group-Project-1---Login-Page-Password-Generator
-	url = https://github.com/ShayanneSamarasinghe/Group-Project-1---Login-Page-Password-Generator.git
