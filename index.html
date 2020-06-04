@@ -54,52 +54,83 @@
                     <h2>Calendar</h2>
                 </div>
                 <div class='row display-row' id='setting-row' style='display:none'>
-                    <h2>Settings</h2>
+                    <div class='container'>
+                        <h2>Settings</h2>
 
-                    <div id='theme'>
-                        <div class='row'>
-                            <div class='col-12 col-sm-2 col-lg-1'>
-                                <label>Theme:</label>
-                            </div>
-                            <div class='col'>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="default" id="default" value="option1">
-                                    <label class="form-check-label" for="default">Default</label>
+                        <div class='margin-row' id='profile'>
+                            <div class='row'>
+                                <div class='col-12 col-sm-2 col-lg-1'>
+                                    <label>Profile:</label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ponder" id="ponder" value="option2">
-                                    <label class="form-check-label" for="ponder">Ponder</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sunset" id="sunset" value="option3">
-                                    <label class="form-check-label" for="sunset">Shimmering Sunset</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="calm" id="calm" value="option4">
-                                    <label class="form-check-label" for="calm">Calm It Down</label>
+                                <div class='col'>
+                                    
+                                    <form>
+                                        <div class="form-group">
+                                          <label for="exampleInputEmail1">Email address</label>
+                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">Password</label>
+                                          <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="form-group form-check">
+                                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div id='weather'>
-                        <div class='row'>
-                            <div class='col-12 col-sm-2 col-lg-1'>
-                                <label>Weather:</label>
-                            </div>
-                            <div class='col'>
-                                <div class="btn-group btn-group-toggle" onclick="changeUnit()" data-toggle="buttons">
-                                    <label class="btn btn-secondary active" id='metric'>
-                                        <input type="radio" name="options" id="metric" checked> &degC
-                                    </label>
-                                    <label class="btn btn-secondary" id='imperial'>
-                                        <input type="radio" name="options" id="imperial"> &degF
-                                    </label>
+
+                        <div class='margin-row' id='theme'>
+                            <div class='row'>
+                                <div class='col-12 col-sm-2 col-lg-1'>
+                                    <label>Theme:</label>
+                                </div>
+                                <div class='col'>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="default" id="default" value="option1">
+                                        <label class="form-check-label" for="default">Default</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ponder" id="ponder" value="option2">
+                                        <label class="form-check-label" for="ponder">Ponder</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sunset" id="sunset" value="option3">
+                                        <label class="form-check-label" for="sunset">Shimmering Sunset</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="calm" id="calm" value="option4">
+                                        <label class="form-check-label" for="calm">Calm It Down</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                        <div class='margin-row' id='weather'>
+                            <div class='row'>
+                                <div class='col-12 col-sm-2 col-lg-1'>
+                                    <label>Weather:</label>
+                                </div>
+                                <div class='col'>
+                                    <div class="btn-group btn-group-toggle" onclick="changeUnit()" data-toggle="buttons">
+                                        <label class="btn btn-secondary active" id='metric'>
+                                            <input type="radio" name="options" id="metric" checked> &degC
+                                        </label>
+                                        <label class="btn btn-secondary" id='imperial'>
+                                            <input type="radio" name="options" id="imperial"> &degF
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
 

@@ -20,6 +20,11 @@
 .sidebar-col{
     width: 100%
 }
+
+.margin-row{
+    margin-bottom: 20px !important;
+}
+
 @media screen and (orientation: portrait) and (max-width: 768px){
     .sidebar{
         height:100%;

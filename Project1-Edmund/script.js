@@ -49,19 +49,29 @@ function themeChange( id , isSetting){
     document.querySelector('.navbar').setAttribute('style',`background-color: ${color[id][3]} !important`)
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
-
-    document.querySelector('.btn-secondary.active').setAttribute('style', `background-color: ${color[id][0]} !important; border-color: ${color[id][0]} !important;`)
-    document.querySelector('.btn-secondary').setAttribute('style', `background-color: ${color[id][1]} !important; border-color: ${color[id][1]} !important;`)
-
-
+    
     document.querySelectorAll('.form-check-input').forEach(value => {
         value.checked = (value.id == selectColor);
     })
+
+    metricChange(id)
 }
 
 
+function metricChange(selectColor){
+    const inactiveColor = color[selectColor][(selectColor == 'sunset')? 0 : 1]
+    const activeColor = color[selectColor][(selectColor == 'sunset')? 1 : 0]
+    
+    document.querySelectorAll('.btn-secondary').forEach(button => {
+        button.setAttribute('style', `background-color: ${inactiveColor} !important; border-color: ${inactiveColor} !important;`)
+    })
+    
+    document.querySelector('.active').setAttribute('style', `background-color: ${activeColor} !important; border-color: ${activeColor} !important;`)
+}
 
-
+function changeUnit(){
+    metricChange(selectColor)
+}
 // .btn-secondary {
 //     color: #fff;
 //     background-color: #6c757d;
