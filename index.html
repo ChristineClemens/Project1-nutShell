@@ -16,7 +16,9 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light whitefont">Hello World</nav>
+    <nav class="navbar navbar-expand-lg navbar-light whitefont">
+        <h1>Hello World!</h1>
+    </nav>
     <div class='container-fluid'>
         
         <div class='row'>
@@ -24,19 +26,19 @@
                 <div id="sidebar" class="list-group ">
                     <div class='row'>
                         <div class='col col-xl-12 sidebar-col' id='home'>
-                            <a class="list-group-item list-group-item-action whitefont" href="#home-row" id='home'>
+                            <a class="list-group-item list-group-item-action whitefont" id='home'>
                                 <span class='side-icon' id='home'><i class="fas fa-home" id='home'></i></span>
                                 <span class='side-name' id='home'>Home</span>
                             </a>
                         </div>
                         <div class='col col-xl-12 sidebar-col' id='calendar'>
-                            <a class="list-group-item list-group-item-action whitefont" href="#calendar-row" id='calendar'>
+                            <a class="list-group-item list-group-item-action whitefont" id='calendar'>
                                 <span class='side-icon' id='calendar'><i class="fas fa-calendar-alt" id='calendar'></i></span>
                                 <span class='side-name' id='calendar'>Calendar</span>
                             </a>
                         </div>
                         <div class='col col-xl-12 sidebar-col' id='setting'>
-                            <a class="list-group-item list-group-item-action whitefont" href="#setting-row" id='setting'>
+                            <a class="list-group-item list-group-item-action whitefont" id='setting'>
                                 <span class='side-icon' id='setting'><i class="fas fa-cog" id='setting'></i></span>
                                 <span class='side-name' id='setting'>Setting</span>
                             </a>
@@ -46,18 +48,43 @@
             </div>
             <div class='col'>
                 <div class='row display-row' id='home-row' style='display:inline'>
-                    <div class='col' style='border:1px solid red; height: 500px;'>Home</div>
+                    <h2>Home</h2>
                 </div>
                 <div class='row display-row' id='calendar-row' style='display:none'>
-                    <div class='col' style='border:1px solid red; height: 500px;'>Calendar</div>
+                    <h2>Calendar</h2>
                 </div>
                 <div class='row display-row' id='setting-row' style='display:none'>
+                    <h2>Settings</h2>
+
                     <div id='theme'>
-                        <label>Theme:</label>
-                        <button type="button" class="btn btn-primary" id='default'>Default</button>
-                        <button type="button" class="btn btn-primary" id='ponder'>Ponder</button>
-                        <button type="button" class="btn btn-primary" id='sunset'>Sunset</button>
-                        <button type="button" class="btn btn-primary" id='calm'>Calm</button>
+                        <div class='row'>
+                            <div class='col-12 col-sm-2 col-lg-1'>
+                                <label>Theme:</label>
+                            </div>
+                            <div class='col'>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="default" id="default" value="option1">
+                                        <label class="form-check-label" for="default">Default</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ponder" id="ponder" value="option2">
+                                        <label class="form-check-label" for="ponder">Ponder</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sunset" id="sunset" value="option3">
+                                        <label class="form-check-label" for="sunset">Shimmering Sunset</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="calm" id="calm" value="option4">
+                                        <label class="form-check-label" for="calm">Calm It Down</label>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
                     </div>
 
                 </div>

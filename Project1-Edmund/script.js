@@ -8,6 +8,8 @@ const color = {
 
 let selectColor = 'default'
 
+startup()
+
 sidebar.addEventListener('click', function(){
     sidebarItemColor(event.target.id)
 
@@ -34,19 +36,21 @@ function startup(){
     themeChange(selectColor, false)
 }
 
-startup()
+
 
 document.querySelector('#theme').addEventListener('click',function(){
     selectColor = event.target.id
     themeChange(selectColor, true)
-
-    
 })
 
+
 function themeChange( id , isSetting){
+    if (isSetting) sidebarItemColor('setting')
     document.querySelector('.navbar').setAttribute('style',`background-color: ${color[id][3]} !important`)
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
 
-
+    document.querySelectorAll('.form-check-input').forEach(value => {
+        value.checked = (value.id == selectColor);
+    })
 }
