@@ -25,7 +25,7 @@
         <div id="weatherApp">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <button type="button" class="btn whitefont navbarInfo" data-toggle="modal" data-target="#weatherModal"></button>
+                    <button type="button" class="btn whitefont navbarInfo" id="forecastBtn" data-toggle="modal" data-target="#weatherModal"></button>
                 </li>
             </ul>
         </div>
@@ -199,7 +199,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="forecast">
               ...
             </div>
             <div class="modal-footer">
@@ -225,7 +225,7 @@
               You are about to log out.
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-cancel whitefont" data-dismiss="modal">Cancel</button>
               <button type="button" class="btn btn-color whitefont" id='confirmLogout'>Log Out</button>
             </div>
           </div>
