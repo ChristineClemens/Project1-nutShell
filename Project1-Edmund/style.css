@@ -25,6 +25,10 @@
     margin-bottom: 50px !important;
 }
 
+.hour {
+    text-align: end;
+}
+
 
 /* For Mobile */
 @media screen and (orientation: portrait) and (max-width: 768px){
