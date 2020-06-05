@@ -25,6 +25,8 @@
     margin-bottom: 20px !important;
 }
 
+
+
 @media screen and (orientation: portrait) and (max-width: 768px){
     .sidebar{
         height:100%;
@@ -53,6 +55,8 @@
         height: calc(100vh - 2.5rem);
         max-width: 70px !important;
     }
+
+
 }
 
 

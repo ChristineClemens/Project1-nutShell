@@ -10,6 +10,11 @@ let selectColor = 'default'
 
 startup()
 
+function startup(){
+    if (!sessionStorage.email) window.location.href = './Project1-Shayanne/';
+    else themeChange(selectColor, false)
+}
+
 sidebar.addEventListener('click', function(){
     sidebarItemColor(event.target.id)
 
@@ -31,11 +36,6 @@ function sidebarItemColor(eventID){
         value.setAttribute('style',`background-color: ${ (value.id == eventID)? color[selectColor][1] :'transparent'} !important`)
     })
 }
-
-function startup(){
-    themeChange(selectColor, false)
-}
-
 
 
 document.querySelector('#theme').addEventListener('click',function(){
@@ -72,14 +72,4 @@ function metricChange(selectColor){
 function changeUnit(){
     metricChange(selectColor)
 }
-// .btn-secondary {
-//     color: #fff;
-//     background-color: #6c757d;
-//     border-color: #6c757d;
-// }
 
-// .btn-secondary:not(:disabled):not(.disabled).active{
-//     color: #fff;
-//     background-color: #545b62;
-//     border-color: #4e555b;
-// }
