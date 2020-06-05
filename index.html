@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Christine's Top Navigation -->
     <nav class="navbar navbar-light whitefont">
         <h1>Hello World!</h1>
 
@@ -36,7 +36,7 @@
     <div class='container-fluid'>
         <div class='row'>
             <div class='col-12 col-sm-2 sidebar'>
-                <!-- Sidebar Navigation -->
+                <!-- Edmund's Sidebar Navigation -->
                 <div id="sidebar" class="list-group ">
                     <div class='row'>
                         <div class='col col-xl-12 sidebar-col' id='home'>
@@ -69,7 +69,7 @@
 
 
             <div class='col'>
-                <!-- Home Page -->
+                <!-- Shaynne's Home Page -->
                 <div class='row display-row' id='home-row' style='display:inline'>
                     <div class='container-fluid'>
                         <h2>Home</h2>
@@ -77,15 +77,90 @@
                 </div>
 
 
-                <!-- Calendar Page -->
+                <!-- Chet's Calendar Page -->
                 <div class='row display-row' id='calendar-row' style='display:none'>
                     <div class='container-fluid'>
                         <h2>Calendar</h2>
+                        
+                        <div class="row">
+                            <div class="col">
+                              <div class = "container-calendar">
+                                <div class = "card">
+                                  <div class = "card-header btn-cancel whitefont" id ="monthAndYear">June 2020</div>
+                                    <table class = " table table-bordered table-responsive-sm" id = "calendar">
+                                        <thread>
+                                            <tr>
+                                              <th>Sun</th>
+                                              <th>Mon</th>
+                                              <th>Tue</th>
+                                              <th>Wed</th>
+                                              <th>Thu</th>
+                                              <th>Fri</th>
+                                              <th>Sat</th>
+                                            </tr>
+                                            </thread>
+                                            <thread>
+                                              <tr>
+                                              <th>1</th>
+                                              <th>2</th>
+                                              <th>3</th>
+                                              <th>4</th>
+                                              <th>5</th>
+                                              <th>6</th>
+                                              <th>7</th>
+                                              </tr>
+                                              <tr>
+                                              <th>8</th>
+                                              <th>9</th>
+                                              <th>10</th>
+                                              <th>11</th>
+                                              <th>12</th>
+                                              <th>13</th>
+                                              <th>14</th>
+                                              </tr>
+                                              <tr>
+                                              <th>15</th>
+                                              <th>16</th>
+                                              <th>17</th>
+                                              <th>18</th>
+                                              <th>19</th>
+                                              <th>20</th>
+                                              <th>21</th>
+                                              </tr>
+                                              <tr>
+                                              <th>22</th>
+                                              <th>23</th>
+                                              <th>24</th>
+                                              <th>25</th>
+                                              <th>26</th>
+                                              <th>27</th>
+                                              <th>28</th>
+                                            </tr>
+                                            <tr>
+                                              <th>29</th>
+                                              <th>30</th>
+                                            </tr>
+                                        </thread>
+                                    <tbody id="calendar-body"></tbody>
+                                  </table>
+                                <div class ="form-inline">
+                                  <button class = "btn-color whitefont col-sm-6" onclick=previous()>Previous</button>
+                                  <button class = "btn-color whitefont col-sm-6" onclick=next()>Next</button>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                            <div class = "col">
+                                <div class="container-fluid container-planner"></div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
                 
-                <!-- Setting Page -->
+                <!-- Edmund's Setting Page -->
                 <div class='row display-row' id='setting-row' style='display:none'>
                     <div class='container-fluid'>
                         <h2>Settings</h2>
@@ -189,7 +264,8 @@
     </div>
 
 
-    <!-- Modal for Weather -->
+
+    <!-- Christine's Modal for Weather -->
     <div class="modal fade" id="weatherModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -211,7 +287,7 @@
 
 
 
-      <!-- Modal for Log Out -->
+      <!-- Edmund's Modal for Log Out -->
       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -232,8 +308,12 @@
         </div>
       </div>
 
+    <!-- Hidden Variables -->
+    <div id='currentDay' style="display: none;"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Project1-Edmund/script.js"></script>
     <script src='./Project1-Christine/Develop/script.js'></script>
+    <script src="./Project-1-Chet/style.js"></script>
 </body>
 </html>

@@ -53,6 +53,8 @@ function themeChange( id , isSetting){
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
     document.querySelector('.btn-cancel').setAttribute('style',`background-color: ${color[id][(selectColor == 'sunset')? 0 : 1]} !important`)
+    
+
     document.querySelectorAll('.form-check-input').forEach(value => {
         value.checked = (value.id == selectColor);
     })
@@ -113,3 +115,5 @@ document.querySelector('#confirmLogout').addEventListener('click',function(){
     sessionStorage.clear()
     location.reload()
 })
+
+
