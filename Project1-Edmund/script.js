@@ -58,7 +58,7 @@ function themeChange( id , isSetting){
     })
 
     metricChange(id)
-    buttonColor()
+    buttonColor(id)
 }
 
 //Setting Weather Unit Change Function
@@ -79,7 +79,7 @@ function changeUnit(){
 }
 
 //Button Color Change Function
-function buttonColor(){
+function buttonColor(selectColor){
     document.querySelectorAll('.btn-color').forEach(button =>{
         button.setAttribute('style',`background-color: ${color[selectColor][(selectColor == 'sunset')? 1 : 0]} !important`)
         button.addEventListener('mouseover', function(){
