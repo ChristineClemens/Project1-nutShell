@@ -16,7 +16,9 @@ function startup(){
     if (!sessionStorage.username) window.location.href = './Project1-Shayanne/';
     else {
         document.getElementById('username').value = sessionStorage.username
+        document.querySelector('#profileName').value = getData.name
         document.getElementById(selectColor).checked = true
+        document.querySelector(`label#${getData.units}`).setAttribute('class','btn btn-secondary active')
         themeChange(selectColor, false)
     }
 }
@@ -87,8 +89,12 @@ function metricChange(selectColor){
 
 //Setting Weather Unit Change onClick
 function changeUnit(){
+    getData.units = event.target.id
+    localStorage[sessionStorage.username] = JSON.stringify(getData)
     metricChange(selectColor)
 }
+
+
 
 //Button Color Change Function
 function buttonColor(selectColor){
@@ -106,9 +112,25 @@ function buttonColor(selectColor){
 //Save Profile onClick
 document.querySelector('#saveProfile').addEventListener('click',function(){
     const confirmPassword = document.querySelector('#confirmPassword')
-    const setPassword = document.querySelector('#setPassword').value
+    const setPassword = document.querySelector('#setPassword')
+    const condition = confirmPassword.value == setPassword.value
 
-    confirmPassword.setAttribute('class',`form-control ${(confirmPassword.value == setPassword)? '':'is-invalid'}`)
+    if (setPassword.value != ''){
+        confirmPassword.setAttribute('class',`form-control ${(condition)? '':'is-invalid'}`)
+        if (condition) {
+            getData.password = setPassword.value
+            confirmPassword.value = ''
+            setPassword.value = ''       
+        }
+    }
+
+    const profileName = document.querySelector('#profileName')
+
+    if (profileName.value == '') profileName.value = getData.name
+    else getData.name = profileName.value
+    
+
+    localStorage[sessionStorage.username] = JSON.stringify(getData)
 })
 
 
