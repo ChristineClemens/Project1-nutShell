@@ -1,3 +1,4 @@
+const getData = (localStorage[sessionStorage.username])? JSON.parse(localStorage[sessionStorage.username]): {}
 const sidebar = document.querySelector('#sidebar')
 const color = {
     default: ['#666666','#999999','#cccccc','#333333'],
@@ -6,14 +7,18 @@ const color = {
     calm:['#88B04B','#D4CACD','#C1CEC1','#EEA0A6']
 }
 
-let selectColor = 'default'
+let selectColor = (getData.theme)? getData.theme : 'default'
 
 startup()
 
 //Loading Theme at Startup
 function startup(){
-    if (!sessionStorage.email) window.location.href = './Project1-Shayanne/';
-    else themeChange(selectColor, false)
+    if (!sessionStorage.username) window.location.href = './Project1-Shayanne/';
+    else {
+        document.getElementById('username').value = sessionStorage.username
+        document.getElementById(selectColor).checked = true
+        themeChange(selectColor, false)
+    }
 }
 
 //Sidebar Page onClick
@@ -43,6 +48,8 @@ function sidebarItemColor(eventID){
 //Setting Theme Change onClick
 document.querySelector('#theme').addEventListener('click',function(){
     selectColor = event.target.id
+    getData.theme = selectColor
+    localStorage[sessionStorage.username] = JSON.stringify(getData)
     themeChange(selectColor, true)
 })
 
@@ -52,8 +59,10 @@ function themeChange( id , isSetting){
     document.querySelector('.navbar').setAttribute('style',`background-color: ${color[id][3]} !important`)
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
-    document.querySelector('.btn-cancel').setAttribute('style',`background-color: ${color[id][(selectColor == 'sunset')? 0 : 1]} !important`)
     
+    document.querySelectorAll('.btn-cancel').forEach(button =>{
+        button.setAttribute('style',`background-color: ${color[id][(selectColor == 'sunset')? 0 : 1]} !important`)
+    })
 
     document.querySelectorAll('.form-check-input').forEach(value => {
         value.checked = (value.id == selectColor);
@@ -61,6 +70,7 @@ function themeChange( id , isSetting){
 
     metricChange(id)
     buttonColor(id)
+    calendarColor(selectColor, Number(moment().format('d')))
 }
 
 //Setting Weather Unit Change Function
@@ -117,3 +127,51 @@ document.querySelector('#confirmLogout').addEventListener('click',function(){
 })
 
 
+//Calendar Day Color Change Function
+function calendarColor(selectColor, day){
+    document.querySelectorAll('th').forEach(value =>{
+        if (Number(value.textContent)){
+            value.setAttribute('style',`${ (value.textContent == day)? "color:white; background-color:"+color[selectColor][2] :''}`)
+            value.setAttribute('id',`${ (value.textContent == day)? 'current' :''}`)
+        }
+    })
+    plannerData()
+}
+
+
+//Calendar Day Color Change onClick
+document.querySelectorAll('th').forEach(value =>{
+    value.addEventListener('click',function(){
+        if (Number(value.textContent)) calendarColor(selectColor,value.textContent)
+    })
+})
+
+
+//Calendar Button Color Change onClick
+document.querySelectorAll('.calendarBtn').forEach(button =>{
+    button.addEventListener('click', function(){
+        var current = Number(document.querySelector('#current').textContent)
+        switch (button.id){
+            case 'todayBtn': calendarColor(selectColor, Number(moment().format('d')));break;
+            case 'previousBtn': if(current != 1) calendarColor(selectColor, current-1);break;
+            case 'nextBtn':if(current != 30) calendarColor(selectColor, current+1);break;
+        }
+    })
+})
+
+
+//Planner Data Function
+function plannerData(){
+    document.querySelectorAll('#description').forEach(text =>{
+        const mthYr = document.querySelector('#monthAndYear').textContent
+        const day = document.querySelector('#current').textContent
+        const time = text.parentElement.textContent.trim()
+        const timestamp = moment(`${day} ${mthYr} ${time}`,'D MMMM YYYY hA').format('x')
+        text.value = (getData[timestamp])? getData[timestamp]: ''
+        
+        text.addEventListener('change',function(){
+            getData[timestamp] = text.value
+            localStorage[sessionStorage.username] = JSON.stringify(getData)
+        })
+    })
+}
