@@ -19,10 +19,16 @@ function startup(){
         document.querySelector('#profileName').value = getData.name
         document.getElementById(selectColor).checked = true
 
-        themeChange(selectColor, false)
-        
         getLocation(getData.units)
-        setInterval(() => {getLocation(getData.units)}, 1000*60*10);
+        getFinance('^GSPC')
+        getMarket()
+
+        setInterval(() => {
+            getLocation(getData.units);
+
+        }, 1000*60);
+
+        themeChange(selectColor, false)
     }
 }
 
@@ -77,7 +83,7 @@ function themeChange( id , isSetting){
 
     metricChange(id)
     buttonColor(id)
-    calendarColor(selectColor, Number(moment().format('d')))
+    calendarColor(selectColor, Number(moment().format('D')))
 }
 
 //Setting Weather Unit Change Function
@@ -207,3 +213,10 @@ function plannerData(){
         })
     })
 }
+
+
+document.querySelector('#stockBtn').addEventListener('click',function(){
+    const quote = document.querySelector('#searchQuote').value
+    getFinance(quote)
+    document.querySelector('#searchQuote').value = ''
+})
