@@ -18,8 +18,11 @@ function startup(){
         document.getElementById('username').value = sessionStorage.username
         document.querySelector('#profileName').value = getData.name
         document.getElementById(selectColor).checked = true
-        document.querySelector(`label#${getData.units}`).setAttribute('class','btn btn-secondary active')
+
         themeChange(selectColor, false)
+        
+        getLocation(getData.units)
+        setInterval(() => {getLocation(getData.units)}, 1000*60*10);
     }
 }
 
@@ -61,7 +64,9 @@ function themeChange( id , isSetting){
     document.querySelector('.navbar').setAttribute('style',`background-color: ${color[id][3]} !important`)
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
-    
+    window.document.title = `${getData.name}'s Dashboard`
+    document.querySelector('#navbarTitle').textContent = window.document.title
+
     document.querySelectorAll('.btn-cancel').forEach(button =>{
         button.setAttribute('style',`background-color: ${color[id][(selectColor == 'sunset')? 0 : 1]} !important`)
     })
@@ -79,11 +84,13 @@ function themeChange( id , isSetting){
 function metricChange(selectColor){
     const inactiveColor = color[selectColor][(selectColor == 'sunset')? 0 : 1]
     const activeColor = color[selectColor][(selectColor == 'sunset')? 1 : 0]
+
     
     document.querySelectorAll('.btn-secondary').forEach(button => {
         button.setAttribute('style', `background-color: ${inactiveColor} !important; border-color: ${inactiveColor} !important;`)
     })
-    
+
+    document.querySelector(`label#${getData.units}`).setAttribute('class','btn btn-secondary active')
     document.querySelector('.active').setAttribute('style', `background-color: ${activeColor} !important; border-color: ${activeColor} !important;`)
 }
 
@@ -92,6 +99,9 @@ function changeUnit(){
     getData.units = event.target.id
     localStorage[sessionStorage.username] = JSON.stringify(getData)
     metricChange(selectColor)
+    getLocation(getData.units)
+    setInterval(() => {getLocation(getData.units)}, 1000*60*10);
+    
 }
 
 
@@ -129,8 +139,8 @@ document.querySelector('#saveProfile').addEventListener('click',function(){
     if (profileName.value == '') profileName.value = getData.name
     else getData.name = profileName.value
     
-
     localStorage[sessionStorage.username] = JSON.stringify(getData)
+    themeChange(selectColor, true)
 })
 
 

@@ -18,16 +18,21 @@
 <body>
 
     <!-- Christine's Top Navigation -->
-    <nav class="navbar navbar-light whitefont">
-        <h1>Hello World!</h1>
+    <nav class="navbar whitefont">
+        <div class='col-6 no-padding'>
+            <h1 id='navbarTitle' ></h1>
+        </div>
 
         <!-- Weather App Button -->
-        <div id="weatherApp">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <button type="button" class="btn whitefont navbarInfo" id="forecastBtn" data-toggle="modal" data-target="#weatherModal"></button>
-                </li>
-            </ul>
+        <div class='col no-padding'>
+            <div id="weatherApp">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item" id='dateTime'></li>
+                    <li class="nav-item">
+                        <button type="button" class="btn whitefont navbarInfo" id="forecastBtn" style="padding:0px !important" data-toggle="modal" data-target="#weatherModal"></button>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </nav>
@@ -85,9 +90,9 @@
                         <div class="row">
                             <div class="col-12 col-lg-6">
                               <div class = "container-calendar">
-                                <div class = "card" style="margin-bottom: 15px;">
+                                <div class = "card" style="margin-bottom: 20px;">
                                   <div class = "card-header btn-cancel whitefont" id ="monthAndYear">June 2020</div>
-                                    <table class = " table table-bordered table-responsive-sm" id = "calendar">
+                                    <table class = " table table-bordered table-responsive-sm" id = "calendarTable">
                                         <thread>
                                             <tr>
                                                 <th>Sun</th>
@@ -149,9 +154,9 @@
                                     <tbody id="calendar-body"></tbody>
                                     </table>
                                 <div class ="form-inline">
-                                  <button class = "btn-color whitefont col-sm-4 calendarBtn" id='previousBtn'>Previous</button>
-                                  <button class = "btn-color whitefont col-sm-4 calendarBtn" id='todayBtn'>Today</button>
-                                  <button class = "btn-color whitefont col-sm-4 calendarBtn" id='nextBtn'>Next</button>
+                                  <button class = "btn-color whitefont col-4 calendarBtn" id='previousBtn'>Previous</button>
+                                  <button class = "btn-color whitefont col-4 calendarBtn" id='todayBtn'>Today</button>
+                                  <button class = "btn-color whitefont col-4 calendarBtn" id='nextBtn'>Next</button>
                                 </div>
                               </div>
                               </div>
@@ -319,8 +324,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Project-1-Chet/style.js"></script>
-    <script src="./Project1-Edmund/script.js"></script>
     <script src='./Project1-Christine/Develop/script.js'></script>
+    <script src="./Project1-Edmund/script.js"></script>
 
 </body>
 </html>
+
+
+
+
+
