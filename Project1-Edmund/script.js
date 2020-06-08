@@ -66,7 +66,7 @@ function themeChange( id , isSetting){
     document.querySelector('.sidebar').setAttribute('style',`background-color: ${color[id][0]} !important`)
     document.querySelector(`a${(isSetting)? '#setting':'#home'}`).setAttribute('style',`background-color: ${color[id][1]} !important`)
     window.document.title = `${getData.name} in a nutShell`
-    document.querySelector('#navbarTitle').innerHTML += `<img src="https://user-images.githubusercontent.com/7273249/30583687-f75c2e34-9d27-11e7-91c6-a539e531f10f.png" width='50px'> ${window.document.title}`
+    document.querySelector('#navbarTitle').innerHTML = `<img src="https://user-images.githubusercontent.com/7273249/30583687-f75c2e34-9d27-11e7-91c6-a539e531f10f.png" width='50px'> ${window.document.title}`
 
     document.querySelectorAll('.btn-cancel').forEach(button =>{
         button.setAttribute('style',`background-color: ${color[id][(selectColor == 'sunset')? 0 : 1]} !important`)
