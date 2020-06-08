@@ -209,11 +209,15 @@ function plannerData(){
         const time = text.parentElement.textContent.trim()
         const timestamp = moment(`${day} ${mthYr} ${time}`,'D MMMM YYYY hA').format('x')
         text.value = (getData[timestamp])? getData[timestamp]: ''
-        
-        text.addEventListener('change',function(){
-            getData[timestamp] = text.value
-            localStorage[sessionStorage.username] = JSON.stringify(getData)
-        })
+    })
+
+    document.querySelector('.container-planner').addEventListener('change',function(){
+        const mthYr = document.querySelector('#monthAndYear').textContent
+        const day = document.querySelector('#current').textContent
+        const time = event.target.parentElement.textContent.trim()
+        const timestamp = moment(`${day} ${mthYr} ${time}`,'D MMMM YYYY hA').format('x')
+        getData[timestamp] = event.target.value
+        localStorage[sessionStorage.username] = JSON.stringify(getData)
     })
 }
 

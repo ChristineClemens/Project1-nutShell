@@ -10,7 +10,6 @@ async function getFinance(quote){
 
     //Get Quote
     fetchData.json().then(function(result){
-        console.log(result)
         const priceChange = (result.price.regularMarketChange.raw < 0 )? 'red"> -' : 'green"> +'
         document.querySelector('#stockName').innerHTML = `${result.price.shortName} (${result.price.symbol})`
         document.querySelector('#stockPrice').innerHTML = `${result.price.regularMarketPrice.fmt} ${result.price.currency} <span style="color:${priceChange}${result.price.regularMarketChange.fmt} (${result.price.regularMarketChangePercent.fmt})</span>`
