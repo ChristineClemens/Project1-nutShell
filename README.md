@@ -48,5 +48,5 @@ In regards to the future, *nutShell* has the potential to grow in many different
 
 
 Github Repository: (https://github.com/wesycool/Project1-Edmund)   
-Deployed Application: (https://wesycool.github.io/Project1-Edmund/)
-YouTube Video: (https://www.youtube.com/watch?v=ilNvKCcVZIQ)
+Deployed Application: (https://wesycool.github.io/Project1-Edmund/)   
+YouTube Video: (https://www.youtube.com/watch?v=99AtP2D6FGQ&feature=youtu.be)
