@@ -71,6 +71,8 @@ async function getMarket(){
     
     fetchData.json().then(function(data){
         const result = data.marketSummaryResponse.result
+
+        console.log(result)
         let allMarket =[]
 
         result.forEach(function(market){
